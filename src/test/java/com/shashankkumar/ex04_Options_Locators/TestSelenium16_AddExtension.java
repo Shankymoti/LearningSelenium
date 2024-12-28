@@ -21,7 +21,10 @@ public class TestSelenium16_AddExtension {
         driver.get("https://www.youtube.com/watch?v=BwTSxsAqlEc");
 
 
-
+//        Proxy proxy = new Proxy();
+//        proxy.setHttpProxy("188.255.245.205:1080");
+//        edgeOptions.setCapability("proxy", proxy);
+        
         Thread.sleep(35000);
         driver.quit();
     }
