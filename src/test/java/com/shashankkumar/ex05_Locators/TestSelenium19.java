@@ -1,4 +1,4 @@
-package ex05_Locators;
+package com.shashankkumar.ex05_Locators;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;

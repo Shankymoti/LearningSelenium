@@ -1,4 +1,4 @@
-package ex05_Locators;
+package com.shashankkumar.ex05_Locators;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -47,6 +48,7 @@ Verify the current URL == https://katalon-demo-cura.herokuapp.com/#appointment
         Thread.sleep(2000);
         String currentUrl = driver.getCurrentUrl();
         Assert.assertEquals(currentUrl, "https://katalon-demo-cura.herokuapp.com/#appointment");
+
 
        Thread.sleep(5000);
        driver.quit();
