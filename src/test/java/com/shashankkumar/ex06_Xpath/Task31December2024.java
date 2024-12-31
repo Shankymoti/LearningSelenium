@@ -52,5 +52,7 @@ public class Task31December2024 {
             Assert.assertFalse(true);
         }
 
+        driver.quit();
+
     }
 }
