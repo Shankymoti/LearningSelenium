@@ -17,7 +17,7 @@ public class TestSelenium18 {
     public void test_Selenium18() throws InterruptedException {
     ChromeOptions chromeOptions = new ChromeOptions();
 
-    chromeOptions.addArguments("--window-maximized");
+    chromeOptions.addArguments("--start-maximized");
 
         WebDriver driver = new ChromeDriver(chromeOptions);
         //driver.navigate().to("https://app.vwo.com/#/login"); we can use this also

@@ -29,7 +29,7 @@ Verify the current URL == https://katalon-demo-cura.herokuapp.com/#appointment
     @Test
     public void test_Task30Dec2024() throws InterruptedException {
         ChromeOptions chromeOptions =  new ChromeOptions();
-        chromeOptions.addArguments("--window-maximize");
+        chromeOptions.addArguments("--start-maximized");
         WebDriver driver = new ChromeDriver(chromeOptions);
 
         driver.get("https://katalon-demo-cura.herokuapp.com/");

@@ -19,7 +19,7 @@ public class TestSelenium19 {
     @Test
     public void test_Selenium19(){
         ChromeOptions chromeOptions =new ChromeOptions();
-        chromeOptions.addArguments("--window-maximized");
+        chromeOptions.addArguments("--start-maximized");
         WebDriver driver = new ChromeDriver(chromeOptions);
 
         driver.get("https://vwo.com/free-trial/?utm_medium=website&utm_source=login-page&utm_campaign=mof_eg_loginpage");
