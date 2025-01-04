@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -25,20 +26,25 @@ public class Task3JanTable {
     }
 
     @Test
-    public void testSelenium(){
+    public void testSelenium() {
         WebElement table = driver.findElement(By.xpath("//div[@class='oxd-table orangehrm-employee-list']/div[2]"));
 
         List<WebElement> rows = table.findElements(By.tagName("div"));
-     for(int i =0; i<rows.size(); i++){
-         List<WebElement> cols = rows.get(i).findElements(By.tagName("div"));
-         for (WebElement col : cols){
-             System.out.println(col.getText());
+        for (int i = 0; i < rows.size(); i++) {
+            List<WebElement> cols = rows.get(i).findElements(By.tagName("div"));
+            for (WebElement col : cols) {
+                System.out.println(col.getText());
 //             if(col.getText().contains("Terminated")){
 //                 driver.findElement(By.xpath("//div[@class='oxd-table orangehrm-employee-list']/div[2]/div[1]/div/div//button[1]")).click();
 //                 driver.findElement(By.xpath("//button[contains(@class,'oxd-button--label-danger')]")).click();
 //                 break;
- //            }
-         }
-     }
+                //            }
+            }
+        }
     }
+     @AfterTest
+     public void closeBrowser(){
+         driver.quit();
+        }
+
 }
