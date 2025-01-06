@@ -1,19 +1,21 @@
-package com.shashankkumar.ex09waits;
+package com.shashankkumar.wait_Alerts_Select;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.function.Function;
 
 public class TestSelenium26 {
 
@@ -36,22 +38,29 @@ public class TestSelenium26 {
     @Owner("Shashank")
     @Description("Explict wait ")
     @Test
-public void testSeleniumwWait(){
+public void testSeleniumwWait() throws InterruptedException {
         driver.get("https://app.vwo.com/#/login");
         driver.findElement(By.id("login-username")).sendKeys("shashank.k@testingacademy.com");
         driver.findElement(By.name("password")).sendKeys("Pass@123");
         //Explict wait
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@data-qa='sibequkica']")));
+    //    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+      //  wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@data-qa='sibequkica']")));
         driver.findElement(By.xpath("//*[@data-qa='sibequkica']")).click();
-
+        //WebElement error_message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("notification-box-description")));
+            Thread.sleep(4000);
         //Fluent wait
 
-        WebElement error_message = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("notification-box-description")));
-        //or
-       // Wait<WebDriver>
+        Wait<WebDriver> fwait =  new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(10)).
+                pollingEvery(Duration.ofSeconds(2)).
+                ignoring(NoSuchElementException.class);
 
-        Assert.assertEquals(error_message.getText(), "Your email, password, IP address or location did not match");
+WebElement element = fwait.until(new Function<WebDriver,WebElement>(){
+    public WebElement apply(WebDriver driver){
+        return driver.findElement(By.className("notification-box-description"));
+    }
+});
+        Assert.assertEquals(element.getText(), "Your email, password, IP address or location did not match");
     }
 
 @AfterTest

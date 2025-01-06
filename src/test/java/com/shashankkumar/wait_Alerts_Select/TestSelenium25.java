@@ -1,4 +1,4 @@
-package com.shashankkumar.ex09waits;
+package com.shashankkumar.wait_Alerts_Select;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
@@ -9,13 +9,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 public class TestSelenium25 {
 
