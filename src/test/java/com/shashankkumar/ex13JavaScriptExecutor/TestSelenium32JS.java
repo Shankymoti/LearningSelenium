@@ -26,6 +26,10 @@ public class TestSelenium32JS {
         JavascriptExecutor js = (JavascriptExecutor) driver;
        // js.executeScript("arguments[0].scrollIntoView(true)",scrollToElement);
         js.executeScript("window.scrollTo(0,1000)");
+
+
+        //js.executeScript("window.location = 'https://www.google.com'")
+        //```
     }
 
     public void closeBrowser(){
