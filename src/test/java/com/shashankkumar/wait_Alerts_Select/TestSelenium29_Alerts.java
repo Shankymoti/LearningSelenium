@@ -18,7 +18,7 @@ public class TestSelenium29_Alerts {
     public void test_SelniumAlets() {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.navigate().to("https://the-internet.herokuapp.com/javascript_alerts");
+      //  driver.navigate().to("https://the-internet.herokuapp.com/javascript_alerts");
         //Alert with Okay Button
        /* WebElement element = driver.findElement(By.xpath("//*[@onclick='jsAlert()']"));
         element.click();
@@ -67,7 +67,7 @@ public class TestSelenium29_Alerts {
 
         //3.Alert window with inpput box, capture text from alert
 
-        WebElement element3 = driver.findElement(By.xpath("//*[@onclick='jsPrompt()']"));
+       /* WebElement element3 = driver.findElement(By.xpath("//*[@onclick='jsPrompt()']"));
         element3.click();
         WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(3));
         wait.until(ExpectedConditions.alertIsPresent());
@@ -77,6 +77,8 @@ public class TestSelenium29_Alerts {
 
         Assert.assertEquals(msg, "I am a JS prompt");
 
+        */
+
       /*  alert.sendKeys("ShashankTesting");
         alert.accept();
         Assert.assertEquals(driver.findElement(By.id("result")).getText(), "You entered: ShashankTesting");
@@ -85,8 +87,13 @@ public class TestSelenium29_Alerts {
        */
 
 
-        alert.dismiss();
+       /* alert.dismiss();
         Assert.assertEquals(driver.findElement(By.id("result")).getText(),"You entered: null");
 
+
+        */
+
+        // Handle basic  auth
+        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
     }
 }
