@@ -28,7 +28,7 @@ public class TestSelenium04 {
 
 
         //SearchContext(Interface)  -- findElement(),findElements() -- GGF
-        // -> WebDriver(Interfaxce)  -- it has some incomplete function -- GF
+        // -> WebDriver(Interface)  -- it has some incomplete function -- GF
         // -> RemoteWebDriver(Class)  -- it also have some function  -- F
          // ChromeDriver, EdgeDriver. FirefoxDriver. InternetExplorerDriver, SafariDriver - Class -S
 
